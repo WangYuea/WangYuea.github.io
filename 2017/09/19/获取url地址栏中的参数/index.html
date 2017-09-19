@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>git分支知识 | 前端开发</title>
+  <title>获取url中参数 | 前端开发</title>
 
   <!-- keywords -->
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="默认只有一个分支，master默认为主分支分支可以理解为代码的拷贝、副本 git分支的一些命令代码12345678查看分支：git branch -a(所有分支) -r(远程分支) 默认不写是本地分支创建分支：git branch 分支名称  （参考当前分支创建的）切换分支：git checkout 分支名称合并分支：git merge 分支名称（来源分支） 从当前分支执行，来源分支合并到当前分支">
+  <meta name="description" content="有这样一个URL：http://item.taobao.com/item.htm?a=1&amp;amp;b=2&amp;amp;c=&amp;amp;d=xxx&amp;amp;e，请写一段JS程序提取URL中的各个GET参数(参数名和参数个数不确定)，将其按key-value形式返回到一个json结构中，如{a:’1′, b:’2′, c:”, d:’xxx’, e:undefined}12345678910111213fu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git分支知识">
-<meta property="og:url" content="http://yoursite.com/2017/09/19/git 分支知识/index.html">
+<meta property="og:title" content="获取url中参数">
+<meta property="og:url" content="http://yoursite.com/2017/09/19/获取url地址栏中的参数/index.html">
 <meta property="og:site_name" content="前端开发">
-<meta property="og:description" content="默认只有一个分支，master默认为主分支分支可以理解为代码的拷贝、副本 git分支的一些命令代码12345678查看分支：git branch -a(所有分支) -r(远程分支) 默认不写是本地分支创建分支：git branch 分支名称  （参考当前分支创建的）切换分支：git checkout 分支名称合并分支：git merge 分支名称（来源分支） 从当前分支执行，来源分支合并到当前分支">
-<meta property="og:updated_time" content="2017-09-19T09:08:33.252Z">
+<meta property="og:description" content="有这样一个URL：http://item.taobao.com/item.htm?a=1&amp;amp;b=2&amp;amp;c=&amp;amp;d=xxx&amp;amp;e，请写一段JS程序提取URL中的各个GET参数(参数名和参数个数不确定)，将其按key-value形式返回到一个json结构中，如{a:’1′, b:’2′, c:”, d:’xxx’, e:undefined}12345678910111213fu">
+<meta property="og:updated_time" content="2017-09-19T09:34:17.038Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git分支知识">
-<meta name="twitter:description" content="默认只有一个分支，master默认为主分支分支可以理解为代码的拷贝、副本 git分支的一些命令代码12345678查看分支：git branch -a(所有分支) -r(远程分支) 默认不写是本地分支创建分支：git branch 分支名称  （参考当前分支创建的）切换分支：git checkout 分支名称合并分支：git merge 分支名称（来源分支） 从当前分支执行，来源分支合并到当前分支">
+<meta name="twitter:title" content="获取url中参数">
+<meta name="twitter:description" content="有这样一个URL：http://item.taobao.com/item.htm?a=1&amp;amp;b=2&amp;amp;c=&amp;amp;d=xxx&amp;amp;e，请写一段JS程序提取URL中的各个GET参数(参数名和参数个数不确定)，将其按key-value形式返回到一个json结构中，如{a:’1′, b:’2′, c:”, d:’xxx’, e:undefined}12345678910111213fu">
   
     <link rel="alternative" href="/atom.xml" title="前端开发" type="application/atom+xml">
   
@@ -164,11 +164,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-git 分支知识" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-获取url地址栏中的参数" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/09/19/git 分支知识/" class="article-date">
-  	<time datetime="2017-09-19T08:59:26.997Z" itemprop="datePublished">2017-09-19</time>
+      <a href="/2017/09/19/获取url地址栏中的参数/" class="article-date">
+  	<time datetime="2017-09-19T09:26:06.596Z" itemprop="datePublished">2017-09-19</time>
 </a>
     </div>
   
@@ -181,7 +181,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      git分支知识
+      获取url中参数
       
     </h1>
   
@@ -199,8 +199,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>默认只有一个分支，master默认为主分支<br>分支可以理解为代码的拷贝、副本</p>
-<h3 id="git分支的一些命令代码"><a href="#git分支的一些命令代码" class="headerlink" title="git分支的一些命令代码"></a>git分支的一些命令代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">查看分支：git branch -a(所有分支) -r(远程分支) 默认不写是本地分支</div><div class="line">创建分支：git branch 分支名称  （参考当前分支创建的）</div><div class="line">切换分支：git checkout 分支名称</div><div class="line">合并分支：git merge 分支名称（来源分支） 从当前分支执行，来源分支合并到当前分支</div><div class="line">例如在master下执行 git merge hello 把hello分支合并到master分支</div><div class="line">删除分支： git branch -d  分支名称  必须把分支合并后才能删除，否则删除不了</div><div class="line">git branch -D 分支名称 强制删除分支</div><div class="line">创建并切换分支: git checkout -b 分支名称</div></pre></td></tr></table></figure>
+        <p>有这样一个URL：<a href="http://item.taobao.com/item.htm?a=1&amp;b=2&amp;c=&amp;d=xxx&amp;e，请写一段JS程序提取URL中的各个GET参数(参数名和参数个数不确定)，将其按key-value形式返回到一个json结构中，如{a:’1′" target="_blank" rel="external">http://item.taobao.com/item.htm?a=1&amp;b=2&amp;c=&amp;d=xxx&amp;e，请写一段JS程序提取URL中的各个GET参数(参数名和参数个数不确定)，将其按key-value形式返回到一个json结构中，如{a:’1′</a>, b:’2′, c:”, d:’xxx’, e:undefined}<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">getUrl</span></span>() &#123;</div><div class="line">       var obj = &#123;&#125;;</div><div class="line">       var currentLink = window.location.href;</div><div class="line">       var current = currentLink.indexOf(<span class="string">'?'</span>);</div><div class="line">       var category = currentLink.substr(current + 1);</div><div class="line">       var str = category.split(<span class="string">'&amp;'</span>);</div><div class="line">       <span class="keyword">for</span> (var i = 0; i &lt; str.length; i++) &#123;</div><div class="line">           var item = str[i];</div><div class="line">           var items = str[i].split(<span class="string">'='</span>);</div><div class="line">           obj[items[0]] = items[1];</div><div class="line">       &#125;</div><div class="line">       <span class="built_in">return</span> obj;</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
+
       
     </div>
     
@@ -209,18 +209,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/09/19/获取url地址栏中的参数/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">&lt;</strong>
-      <div class="article-nav-title">
-        
-          获取url中参数
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/09/19/git的回滚/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">git回滚</div>
+    <a href="/2017/09/19/git 分支知识/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git分支知识</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
   
@@ -230,7 +221,7 @@
 </article>
 
 
-<div class="ds-share share" data-thread-key="git 分支知识" data-title="git分支知识" data-url="http://yoursite.com/2017/09/19/git 分支知识/"  data-images="http://b168.photo.store.qq.com/psb?/V12qXfqn2FfQFv/LWINemvs02vpA*Waz*H71ImF5XKUHh31uLJGG66ReEQ!/b/dJt2LWTNLQAA&amp;bo=wAOAAgAAAAABAGY!&amp;rf=viewer_4&amp;t=5" data-content="git分支知识">
+<div class="ds-share share" data-thread-key="获取url地址栏中的参数" data-title="获取url中参数" data-url="http://yoursite.com/2017/09/19/获取url地址栏中的参数/"  data-images="http://b168.photo.store.qq.com/psb?/V12qXfqn2FfQFv/LWINemvs02vpA*Waz*H71ImF5XKUHh31uLJGG66ReEQ!/b/dJt2LWTNLQAA&amp;bo=wAOAAgAAAAABAGY!&amp;rf=viewer_4&amp;t=5" data-content="获取url中参数">
     <div class="ds-share-inline">
       <ul  class="ds-share-icons-16">
       	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>

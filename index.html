@@ -162,6 +162,61 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-获取url地址栏中的参数" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/19/获取url地址栏中的参数/" class="article-date">
+  	<time datetime="2017-09-19T09:26:06.596Z" itemprop="datePublished">2017-09-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/19/获取url地址栏中的参数/">
+        获取url中参数
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有这样一个URL：<a href="http://item.taobao.com/item.htm?a=1&amp;b=2&amp;c=&amp;d=xxx&amp;e，请写一段JS程序提取URL中的各个GET参数(参数名和参数个数不确定)，将其按key-value形式返回到一个json结构中，如{a:’1′" target="_blank" rel="external">http://item.taobao.com/item.htm?a=1&amp;b=2&amp;c=&amp;d=xxx&amp;e，请写一段JS程序提取URL中的各个GET参数(参数名和参数个数不确定)，将其按key-value形式返回到一个json结构中，如{a:’1′</a>, b:’2′, c:”, d:’xxx’, e:undefined}<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">getUrl</span></span>() &#123;</div><div class="line">       var obj = &#123;&#125;;</div><div class="line">       var currentLink = window.location.href;</div><div class="line">       var current = currentLink.indexOf(<span class="string">'?'</span>);</div><div class="line">       var category = currentLink.substr(current + 1);</div><div class="line">       var str = category.split(<span class="string">'&amp;'</span>);</div><div class="line">       <span class="keyword">for</span> (var i = 0; i &lt; str.length; i++) &#123;</div><div class="line">           var item = str[i];</div><div class="line">           var items = str[i].split(<span class="string">'='</span>);</div><div class="line">           obj[items[0]] = items[1];</div><div class="line">       &#125;</div><div class="line">       <span class="built_in">return</span> obj;</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-git 分支知识" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -710,62 +765,10 @@
 
 
   
-    <article id="post-锚点定位" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2016/07/25/锚点定位/" class="article-date">
-  	<time datetime="2016-07-24T16:00:00.000Z" itemprop="datePublished">2016-07-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/25/锚点定位/">
-        Call 和apply的区别
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>锚点的定位适合于较长的页面，点击某个关键词到达页面中指定的位置。</p>
-<h3 id="使用创建a标签链接"><a href="#使用创建a标签链接" class="headerlink" title="使用创建a标签链接"></a>使用创建a标签链接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=<span class="string">"#id名"</span>&gt;文本内容&lt;/a&gt;</div></pre></td></tr></table></figure>
-<h3 id="使用相应的id名标注跳转到目标的位置"><a href="#使用相应的id名标注跳转到目标的位置" class="headerlink" title="使用相应的id名标注跳转到目标的位置"></a>使用相应的id名标注跳转到目标的位置</h3><h3 id="不同页面的锚点定位：前面加上页面的路劲就可以了"><a href="#不同页面的锚点定位：前面加上页面的路劲就可以了" class="headerlink" title="不同页面的锚点定位：前面加上页面的路劲就可以了"></a>不同页面的锚点定位：前面加上页面的路劲就可以了</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=<span class="string">"页面路劲#id名"</span>&gt;文本内容&lt;/a&gt;</div></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">
