@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Call 和apply的区别 | 前端开发</title>
+  <title>javasccript | 前端开发</title>
 
   <!-- keywords -->
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="锚点的定位适合于较长的页面，点击某个关键词到达页面中指定的位置。 使用创建a标签链接1&amp;lt;a href=&quot;#id名&quot;&amp;gt;文本内容&amp;lt;/a&amp;gt; 使用相应的id名标注跳转到目标的位置不同页面的锚点定位：前面加上页面的路劲就可以了1&amp;lt;a href=&quot;页面路劲#id名&quot;&amp;gt;文本内容&amp;lt;/a&amp;gt;">
+  <meta name="description" content="javascript是脚本语言，不需要编译，是一种客户端的脚本语言 组成123- ECMAScript- DOM- BOM JavaScript[3]是一种基于对象和事件驱动并具有相对安全性的客户端脚本语言。同时也是一种广泛用于客户端Web开发的脚本语言，常用来给HTML网页添加动态功能，比如响应用户的各种操作。它最初由网景公司（Netscape）的Brendan Eich设计，是一种动态、弱类型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Call 和apply的区别">
-<meta property="og:url" content="http://yoursite.com/2016/07/25/锚点定位/index.html">
+<meta property="og:title" content="javasccript">
+<meta property="og:url" content="http://yoursite.com/2017/05/09/javasccript/index.html">
 <meta property="og:site_name" content="前端开发">
-<meta property="og:description" content="锚点的定位适合于较长的页面，点击某个关键词到达页面中指定的位置。 使用创建a标签链接1&amp;lt;a href=&quot;#id名&quot;&amp;gt;文本内容&amp;lt;/a&amp;gt; 使用相应的id名标注跳转到目标的位置不同页面的锚点定位：前面加上页面的路劲就可以了1&amp;lt;a href=&quot;页面路劲#id名&quot;&amp;gt;文本内容&amp;lt;/a&amp;gt;">
-<meta property="og:updated_time" content="2017-09-19T08:12:24.893Z">
+<meta property="og:description" content="javascript是脚本语言，不需要编译，是一种客户端的脚本语言 组成123- ECMAScript- DOM- BOM JavaScript[3]是一种基于对象和事件驱动并具有相对安全性的客户端脚本语言。同时也是一种广泛用于客户端Web开发的脚本语言，常用来给HTML网页添加动态功能，比如响应用户的各种操作。它最初由网景公司（Netscape）的Brendan Eich设计，是一种动态、弱类型">
+<meta property="og:updated_time" content="2017-09-19T08:19:16.751Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Call 和apply的区别">
-<meta name="twitter:description" content="锚点的定位适合于较长的页面，点击某个关键词到达页面中指定的位置。 使用创建a标签链接1&amp;lt;a href=&quot;#id名&quot;&amp;gt;文本内容&amp;lt;/a&amp;gt; 使用相应的id名标注跳转到目标的位置不同页面的锚点定位：前面加上页面的路劲就可以了1&amp;lt;a href=&quot;页面路劲#id名&quot;&amp;gt;文本内容&amp;lt;/a&amp;gt;">
+<meta name="twitter:title" content="javasccript">
+<meta name="twitter:description" content="javascript是脚本语言，不需要编译，是一种客户端的脚本语言 组成123- ECMAScript- DOM- BOM JavaScript[3]是一种基于对象和事件驱动并具有相对安全性的客户端脚本语言。同时也是一种广泛用于客户端Web开发的脚本语言，常用来给HTML网页添加动态功能，比如响应用户的各种操作。它最初由网景公司（Netscape）的Brendan Eich设计，是一种动态、弱类型">
   
     <link rel="alternative" href="/atom.xml" title="前端开发" type="application/atom+xml">
   
@@ -164,11 +164,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-锚点定位" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-javasccript" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/25/锚点定位/" class="article-date">
-  	<time datetime="2016-07-24T16:00:00.000Z" itemprop="datePublished">2016-07-25</time>
+      <a href="/2017/05/09/javasccript/" class="article-date">
+  	<time datetime="2017-05-08T16:00:00.000Z" itemprop="datePublished">2017-05-09</time>
 </a>
     </div>
   
@@ -181,7 +181,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Call 和apply的区别
+      javasccript
       
     </h1>
   
@@ -199,9 +199,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>锚点的定位适合于较长的页面，点击某个关键词到达页面中指定的位置。</p>
-<h3 id="使用创建a标签链接"><a href="#使用创建a标签链接" class="headerlink" title="使用创建a标签链接"></a>使用创建a标签链接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=<span class="string">"#id名"</span>&gt;文本内容&lt;/a&gt;</div></pre></td></tr></table></figure>
-<h3 id="使用相应的id名标注跳转到目标的位置"><a href="#使用相应的id名标注跳转到目标的位置" class="headerlink" title="使用相应的id名标注跳转到目标的位置"></a>使用相应的id名标注跳转到目标的位置</h3><h3 id="不同页面的锚点定位：前面加上页面的路劲就可以了"><a href="#不同页面的锚点定位：前面加上页面的路劲就可以了" class="headerlink" title="不同页面的锚点定位：前面加上页面的路劲就可以了"></a>不同页面的锚点定位：前面加上页面的路劲就可以了</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=<span class="string">"页面路劲#id名"</span>&gt;文本内容&lt;/a&gt;</div></pre></td></tr></table></figure>
+        <p>javascript是脚本语言，不需要编译，是一种客户端的脚本语言</p>
+<h3 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- ECMAScript</div><div class="line">- DOM</div><div class="line">- BOM</div></pre></td></tr></table></figure>
+<p>JavaScript[3]是一种基于对象和事件驱动并具有相对安全性的客户端脚本语言。同时也是一种广泛用于客户端Web开发的脚本语言，常用来给HTML网页添加动态功能，比如响应用户的各种操作。它最初由网景公司（Netscape）的Brendan Eich设计，是一种动态、弱类型、基于原型的语言，内置支持类。JavaScript是Sun公司的注册商标。Ecma国际以JavaScript为基础制定了ECMAScript标准。JavaScript也可以用于其他场合，如服务器端编程。完整的JavaScript实现包含三个部分：ECMAScript，文档对象模型，字节顺序记号。</p>
+<p>Netscape公司在最初将其脚本语言命名为LiveScript。在Netscape在与Sun合作之后将其改名为JavaScript。JavaScript最初受Java启发而开始设计的，目的之一就是“看上去像Java”，因此语法上有类似之处，一些名称和命名规范也借自Java。但JavaScript的主要设计原则源自Self和Scheme。JavaScript与Java名称上的近似，是当时网景为了营销考虑与Sun公司达成协议的结果。</p>
+<p>为了取得技术优势，微软推出了VBScript来迎战JavaScript的脚本语言。为了互用性，Ecma国际（前身为欧洲计算机制造商协会）创建了ECMA-262标准（ECMAScript）。现在两者都属于ECMAScript的实现。尽管JavaScript作为给非程序人员的脚本语言，而非是作为给程序人员的编程语言来推广和宣传，但是JavaScript具有非常丰富的特性。</p>
+<h3 id="javascript组成一个完整的-JavaScript-实现是由以下-3-个不同部分组成的："><a href="#javascript组成一个完整的-JavaScript-实现是由以下-3-个不同部分组成的：" class="headerlink" title="javascript组成一个完整的 JavaScript 实现是由以下 3 个不同部分组成的："></a>javascript组成一个完整的 JavaScript 实现是由以下 3 个不同部分组成的：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">核心（ECMAScript）、文档对象模型（Document Object Model，简称DOM）、浏览器对象模型（Browser Object Model，简称BOM）。</div></pre></td></tr></table></figure>
+<h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><p>JavaScript程序是由若干语句组成的，语句是编写程序的指令。JavaScript提供了完整的基本编程语句，它们是：</p>
+<p>赋值语句、switch选择语句、while循环语句、for循环语句、for each循环语句、do…while循环语句、break循环中止语句、continue循环中断语句、with语句、try…catch语句、if语句（if..else，if…else if…）。</p>
+
       
     </div>
     
@@ -210,15 +216,20 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/05/09/javasccript/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/09/19/call和apply/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">&lt;</strong>
       <div class="article-nav-title">
         
-          javasccript
+          Call 和apply的区别
         
       </div>
     </a>
   
+  
+    <a href="/2016/07/25/锚点定位/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Call 和apply的区别</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
   
 </nav>
 
@@ -226,7 +237,7 @@
 </article>
 
 
-<div class="ds-share share" data-thread-key="锚点定位" data-title="Call 和apply的区别" data-url="http://yoursite.com/2016/07/25/锚点定位/"  data-images="http://b168.photo.store.qq.com/psb?/V12qXfqn2FfQFv/LWINemvs02vpA*Waz*H71ImF5XKUHh31uLJGG66ReEQ!/b/dJt2LWTNLQAA&amp;bo=wAOAAgAAAAABAGY!&amp;rf=viewer_4&amp;t=5" data-content="Call 和apply的区别">
+<div class="ds-share share" data-thread-key="javasccript" data-title="javasccript" data-url="http://yoursite.com/2017/05/09/javasccript/"  data-images="http://b168.photo.store.qq.com/psb?/V12qXfqn2FfQFv/LWINemvs02vpA*Waz*H71ImF5XKUHh31uLJGG66ReEQ!/b/dJt2LWTNLQAA&amp;bo=wAOAAgAAAAABAGY!&amp;rf=viewer_4&amp;t=5" data-content="javasccript">
     <div class="ds-share-inline">
       <ul  class="ds-share-icons-16">
       	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>

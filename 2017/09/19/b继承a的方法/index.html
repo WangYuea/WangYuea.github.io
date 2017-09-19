@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Call 和apply的区别 | 前端开发</title>
+  <title>b继承a的方法 | 前端开发</title>
 
   <!-- keywords -->
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="锚点的定位适合于较长的页面，点击某个关键词到达页面中指定的位置。 使用创建a标签链接1&amp;lt;a href=&quot;#id名&quot;&amp;gt;文本内容&amp;lt;/a&amp;gt; 使用相应的id名标注跳转到目标的位置不同页面的锚点定位：前面加上页面的路劲就可以了1&amp;lt;a href=&quot;页面路劲#id名&quot;&amp;gt;文本内容&amp;lt;/a&amp;gt;">
+  <meta name="description" content="就是利用的了call和apply的方法实现了继承。12345678910111213141516171819function A( age, name )&amp;#123;    this.age = age;    this.name = name;&amp;#125;A.prototype.show = function()&amp;#123;    alert(&apos;父级方法&apos;);&amp;#125;function B(a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Call 和apply的区别">
-<meta property="og:url" content="http://yoursite.com/2016/07/25/锚点定位/index.html">
+<meta property="og:title" content="b继承a的方法">
+<meta property="og:url" content="http://yoursite.com/2017/09/19/b继承a的方法/index.html">
 <meta property="og:site_name" content="前端开发">
-<meta property="og:description" content="锚点的定位适合于较长的页面，点击某个关键词到达页面中指定的位置。 使用创建a标签链接1&amp;lt;a href=&quot;#id名&quot;&amp;gt;文本内容&amp;lt;/a&amp;gt; 使用相应的id名标注跳转到目标的位置不同页面的锚点定位：前面加上页面的路劲就可以了1&amp;lt;a href=&quot;页面路劲#id名&quot;&amp;gt;文本内容&amp;lt;/a&amp;gt;">
-<meta property="og:updated_time" content="2017-09-19T08:12:24.893Z">
+<meta property="og:description" content="就是利用的了call和apply的方法实现了继承。12345678910111213141516171819function A( age, name )&amp;#123;    this.age = age;    this.name = name;&amp;#125;A.prototype.show = function()&amp;#123;    alert(&apos;父级方法&apos;);&amp;#125;function B(a">
+<meta property="og:updated_time" content="2017-09-19T08:22:07.883Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Call 和apply的区别">
-<meta name="twitter:description" content="锚点的定位适合于较长的页面，点击某个关键词到达页面中指定的位置。 使用创建a标签链接1&amp;lt;a href=&quot;#id名&quot;&amp;gt;文本内容&amp;lt;/a&amp;gt; 使用相应的id名标注跳转到目标的位置不同页面的锚点定位：前面加上页面的路劲就可以了1&amp;lt;a href=&quot;页面路劲#id名&quot;&amp;gt;文本内容&amp;lt;/a&amp;gt;">
+<meta name="twitter:title" content="b继承a的方法">
+<meta name="twitter:description" content="就是利用的了call和apply的方法实现了继承。12345678910111213141516171819function A( age, name )&amp;#123;    this.age = age;    this.name = name;&amp;#125;A.prototype.show = function()&amp;#123;    alert(&apos;父级方法&apos;);&amp;#125;function B(a">
   
     <link rel="alternative" href="/atom.xml" title="前端开发" type="application/atom+xml">
   
@@ -164,11 +164,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-锚点定位" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-b继承a的方法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/25/锚点定位/" class="article-date">
-  	<time datetime="2016-07-24T16:00:00.000Z" itemprop="datePublished">2016-07-25</time>
+      <a href="/2017/09/19/b继承a的方法/" class="article-date">
+  	<time datetime="2017-09-19T08:21:08.434Z" itemprop="datePublished">2017-09-19</time>
 </a>
     </div>
   
@@ -181,7 +181,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Call 和apply的区别
+      b继承a的方法
       
     </h1>
   
@@ -199,9 +199,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>锚点的定位适合于较长的页面，点击某个关键词到达页面中指定的位置。</p>
-<h3 id="使用创建a标签链接"><a href="#使用创建a标签链接" class="headerlink" title="使用创建a标签链接"></a>使用创建a标签链接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=<span class="string">"#id名"</span>&gt;文本内容&lt;/a&gt;</div></pre></td></tr></table></figure>
-<h3 id="使用相应的id名标注跳转到目标的位置"><a href="#使用相应的id名标注跳转到目标的位置" class="headerlink" title="使用相应的id名标注跳转到目标的位置"></a>使用相应的id名标注跳转到目标的位置</h3><h3 id="不同页面的锚点定位：前面加上页面的路劲就可以了"><a href="#不同页面的锚点定位：前面加上页面的路劲就可以了" class="headerlink" title="不同页面的锚点定位：前面加上页面的路劲就可以了"></a>不同页面的锚点定位：前面加上页面的路劲就可以了</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=<span class="string">"页面路劲#id名"</span>&gt;文本内容&lt;/a&gt;</div></pre></td></tr></table></figure>
+        <p>就是利用的了call和apply的方法实现了继承。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> A( age, name )&#123;</div><div class="line">    this.age = age;</div><div class="line">    this.name = name;</div><div class="line">&#125;</div><div class="line"></div><div class="line">A.prototype.show = <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">    alert(<span class="string">'父级方法'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">function</span> B(age,name,job)&#123;</div><div class="line">    A.apply( this, arguments );</div><div class="line">    this.job = job;</div><div class="line">&#125;</div><div class="line"></div><div class="line">B.prototype = new A();</div><div class="line">var b = new A(14,<span class="string">'侠客行'</span>);</div><div class="line">var a = new B(15,<span class="string">'狼侠'</span>,<span class="string">'侠客'</span>);</div><div class="line">console.log(b);//age: 14, name: <span class="string">"侠客行"</span></div><div class="line">console.log(a);//age: 15, name: <span class="string">"狼侠"</span>, job: <span class="string">"侠客"</span></div></pre></td></tr></table></figure></p>
+
       
     </div>
     
@@ -210,15 +209,20 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/05/09/javasccript/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/09/19/dos和shell知识/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">&lt;</strong>
       <div class="article-nav-title">
         
-          javasccript
+          dos 和 shell 知识
         
       </div>
     </a>
   
+  
+    <a href="/2017/09/19/call和apply/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Call 和apply的区别</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
   
 </nav>
 
@@ -226,7 +230,7 @@
 </article>
 
 
-<div class="ds-share share" data-thread-key="锚点定位" data-title="Call 和apply的区别" data-url="http://yoursite.com/2016/07/25/锚点定位/"  data-images="http://b168.photo.store.qq.com/psb?/V12qXfqn2FfQFv/LWINemvs02vpA*Waz*H71ImF5XKUHh31uLJGG66ReEQ!/b/dJt2LWTNLQAA&amp;bo=wAOAAgAAAAABAGY!&amp;rf=viewer_4&amp;t=5" data-content="Call 和apply的区别">
+<div class="ds-share share" data-thread-key="b继承a的方法" data-title="b继承a的方法" data-url="http://yoursite.com/2017/09/19/b继承a的方法/"  data-images="http://b168.photo.store.qq.com/psb?/V12qXfqn2FfQFv/LWINemvs02vpA*Waz*H71ImF5XKUHh31uLJGG66ReEQ!/b/dJt2LWTNLQAA&amp;bo=wAOAAgAAAAABAGY!&amp;rf=viewer_4&amp;t=5" data-content="b继承a的方法">
     <div class="ds-share-inline">
       <ul  class="ds-share-icons-16">
       	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
