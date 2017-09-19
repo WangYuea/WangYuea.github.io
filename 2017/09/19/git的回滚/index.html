@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>git回滚 | 前端开发</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="git快照的回滚git reset –hard1231、回滚本地仓库的快照2、使用本地仓库的快照覆盖暂存区3、使用本地仓库的快照覆盖工作目录 不保存暂存区和工作目录的文件代码 git reset –soft1只回滚本地仓库的快照 暂存区和工作目录的不变 git reset –mixed（默认）1回滚本地仓库的快照并且覆盖暂存区，但是不覆盖工作目录 取消最后一次提交 ####git reset –h">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git回滚">
+<meta property="og:url" content="http://yoursite.com/2017/09/19/git的回滚/index.html">
+<meta property="og:site_name" content="前端开发">
+<meta property="og:description" content="git快照的回滚git reset –hard1231、回滚本地仓库的快照2、使用本地仓库的快照覆盖暂存区3、使用本地仓库的快照覆盖工作目录 不保存暂存区和工作目录的文件代码 git reset –soft1只回滚本地仓库的快照 暂存区和工作目录的不变 git reset –mixed（默认）1回滚本地仓库的快照并且覆盖暂存区，但是不覆盖工作目录 取消最后一次提交 ####git reset –h">
+<meta property="og:updated_time" content="2017-09-19T08:59:11.035Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git回滚">
+<meta name="twitter:description" content="git快照的回滚git reset –hard1231、回滚本地仓库的快照2、使用本地仓库的快照覆盖暂存区3、使用本地仓库的快照覆盖工作目录 不保存暂存区和工作目录的文件代码 git reset –soft1只回滚本地仓库的快照 暂存区和工作目录的不变 git reset –mixed（默认）1回滚本地仓库的快照并且覆盖暂存区，但是不覆盖工作目录 取消最后一次提交 ####git reset –h">
+  
+    <link rel="alternative" href="/atom.xml" title="前端开发" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://b168.photo.store.qq.com/psb?/V12qXfqn2FfQFv/LWINemvs02vpA*Waz*H71ImF5XKUHh31uLJGG66ReEQ!/b/dJt2LWTNLQAA&amp;bo=wAOAAgAAAAABAGY!&amp;rf=viewer_4&amp;t=5" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Nicky Wang</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/smackgg/hexo-theme-smackdown">smackdown</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Nicky Wang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://b168.photo.store.qq.com/psb?/V12qXfqn2FfQFv/LWINemvs02vpA*Waz*H71ImF5XKUHh31uLJGG66ReEQ!/b/dJt2LWTNLQAA&amp;bo=wAOAAgAAAAABAGY!&amp;rf=viewer_4&amp;t=5" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Nicky Wang</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-git的回滚" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/19/git的回滚/" class="article-date">
+  	<time datetime="2017-09-19T08:42:34.705Z" itemprop="datePublished">2017-09-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git回滚
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="git快照的回滚"><a href="#git快照的回滚" class="headerlink" title="git快照的回滚"></a>git快照的回滚</h3><h4 id="git-reset-–hard"><a href="#git-reset-–hard" class="headerlink" title="git reset –hard"></a>git reset –hard</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1、回滚本地仓库的快照</div><div class="line">2、使用本地仓库的快照覆盖暂存区</div><div class="line">3、使用本地仓库的快照覆盖工作目录</div></pre></td></tr></table></figure>
+<p>不保存暂存区和工作目录的文件代码</p>
+<h4 id="git-reset-–soft"><a href="#git-reset-–soft" class="headerlink" title="git reset –soft"></a>git reset –soft</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">只回滚本地仓库的快照</div></pre></td></tr></table></figure>
+<p>暂存区和工作目录的不变</p>
+<h4 id="git-reset-–mixed（默认）"><a href="#git-reset-–mixed（默认）" class="headerlink" title="git reset –mixed（默认）"></a>git reset –mixed（默认）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">回滚本地仓库的快照并且覆盖暂存区，但是不覆盖工作目录</div></pre></td></tr></table></figure>
+<p>取消最后一次提交</p>
+<p>####<br>git reset –hard 倒数第二个commitid<br>git reset –hard HEAD^<br>两者一样<br>HEAD便是本地仓库的最新快照<br>^表示上一次快照</p>
+<h3 id="git-add-的逆操作"><a href="#git-add-的逆操作" class="headerlink" title="git add 的逆操作"></a>git add 的逆操作</h3><p>直接操作：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git reset --mixed HEAD  mixed 可省略</div><div class="line">git reset HEAD</div><div class="line">git reset  最后一次的commitId</div></pre></td></tr></table></figure></p>
+<p>mixed回滚本地仓库的快照并且覆盖暂存区，但是不覆盖工作目录</p>
+<h3 id="回滚所有的修改操作"><a href="#回滚所有的修改操作" class="headerlink" title="回滚所有的修改操作"></a>回滚所有的修改操作</h3><p>用暂存区覆盖工作目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git checkout. （.代表全部修改）</div><div class="line">git checkout 文件列表</div></pre></td></tr></table></figure></p>
+<h3 id="git-rm-–cached-文件列表"><a href="#git-rm-–cached-文件列表" class="headerlink" title="git rm –cached  文件列表"></a>git rm –cached  文件列表</h3><p>把暂存区的文件删除</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/09/19/git 分支知识/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          git分支知识
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/19/vi编辑器/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vi编辑器</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="ds-share share" data-thread-key="git的回滚" data-title="git回滚" data-url="http://yoursite.com/2017/09/19/git的回滚/"  data-images="http://b168.photo.store.qq.com/psb?/V12qXfqn2FfQFv/LWINemvs02vpA*Waz*H71ImF5XKUHh31uLJGG66ReEQ!/b/dJt2LWTNLQAA&amp;bo=wAOAAgAAAAABAGY!&amp;rf=viewer_4&amp;t=5" data-content="git回滚">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2017 Nicky Wang
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
