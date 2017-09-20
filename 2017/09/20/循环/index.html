@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>循环 for...in \ forEach() \ $.each() \ $().each() | 前端开发</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="for…in语句用于遍历数组或者对象的属性（对数组或者对象的属性进行循环操作）。是javascript中的。语法：1234for (变量 in 对象)&amp;#123;    在此执行代码&amp;#125; “变量”用来指定变量，指定的变量可以是数组元素，也可以是对象的属性。 实例:12345678910var xvar mycars = new Array()mycars[0] = &quot;宝马&quot;mycars[1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="循环 for...in \ forEach() \ $.each() \ $().each()">
+<meta property="og:url" content="http://yoursite.com/2017/09/20/循环/index.html">
+<meta property="og:site_name" content="前端开发">
+<meta property="og:description" content="for…in语句用于遍历数组或者对象的属性（对数组或者对象的属性进行循环操作）。是javascript中的。语法：1234for (变量 in 对象)&amp;#123;    在此执行代码&amp;#125; “变量”用来指定变量，指定的变量可以是数组元素，也可以是对象的属性。 实例:12345678910var xvar mycars = new Array()mycars[0] = &quot;宝马&quot;mycars[1">
+<meta property="og:updated_time" content="2017-09-20T03:21:43.290Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="循环 for...in \ forEach() \ $.each() \ $().each()">
+<meta name="twitter:description" content="for…in语句用于遍历数组或者对象的属性（对数组或者对象的属性进行循环操作）。是javascript中的。语法：1234for (变量 in 对象)&amp;#123;    在此执行代码&amp;#125; “变量”用来指定变量，指定的变量可以是数组元素，也可以是对象的属性。 实例:12345678910var xvar mycars = new Array()mycars[0] = &quot;宝马&quot;mycars[1">
+  
+    <link rel="alternative" href="/atom.xml" title="前端开发" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://b168.photo.store.qq.com/psb?/V12qXfqn2FfQFv/LWINemvs02vpA*Waz*H71ImF5XKUHh31uLJGG66ReEQ!/b/dJt2LWTNLQAA&amp;bo=wAOAAgAAAAABAGY!&amp;rf=viewer_4&amp;t=5" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Nicky Wang</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/smackgg/hexo-theme-smackdown">smackdown</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Nicky Wang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://b168.photo.store.qq.com/psb?/V12qXfqn2FfQFv/LWINemvs02vpA*Waz*H71ImF5XKUHh31uLJGG66ReEQ!/b/dJt2LWTNLQAA&amp;bo=wAOAAgAAAAABAGY!&amp;rf=viewer_4&amp;t=5" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Nicky Wang</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-循环" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/20/循环/" class="article-date">
+  	<time datetime="2017-09-20T03:06:30.000Z" itemprop="datePublished">2017-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      循环 for...in \ forEach() \ $.each() \ $().each()
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="for…in"><a href="#for…in" class="headerlink" title="for…in"></a>for…in</h3><p>语句用于遍历数组或者对象的属性（对数组或者对象的属性进行循环操作）。是javascript中的。<br>语法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (变量 <span class="keyword">in</span> 对象)</div><div class="line">&#123;</div><div class="line">    在此执行代码</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>“变量”用来指定变量，指定的变量可以是数组元素，也可以是对象的属性。</p>
+<p>实例:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var x</div><div class="line">var mycars = new Array()</div><div class="line">mycars[0] = <span class="string">"宝马"</span></div><div class="line">mycars[1] = <span class="string">"奔驰"</span></div><div class="line">mycars[2] = <span class="string">"宾利"</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> (x <span class="keyword">in</span> mycars)</div><div class="line">&#123;</div><div class="line">document.write(mycars[x] + <span class="string">"&lt;br /&gt;"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach()"></a>forEach()</h3><p> 用于调用数组的每一个元素，并将元素传递给回调函数。<br> 是js中遍历数组的方法<br> 对于空数组不会执行回调函数</p>
+<p> 例子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var arr=[1,2,3,4];</div><div class="line">arr.forEach(<span class="keyword">function</span>(val,index,arr)&#123;//val为数组中当前的值，index为当前值的下表，arr为原数组</div><div class="line">    arr[index]=2*val;</div><div class="line">&#125;);</div><div class="line">console.log(arr);//结果是修改了原数组，为每个数乘以2</div></pre></td></tr></table></figure></p>
+<h3 id="each"><a href="#each" class="headerlink" title="each()"></a>each()</h3><p>规定为每一个匹配的元素规定运行的函数<br>返回false可用于及早停止循环</p>
+<h4 id="each-是jquery中遍历数组的方法"><a href="#each-是jquery中遍历数组的方法" class="headerlink" title="$.each()是jquery中遍历数组的方法"></a>$.each()是jquery中遍历数组的方法</h4><p>例子：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr=[1,2,3,4];</div><div class="line">$.each(arr,<span class="keyword">function</span>(i,item)&#123;</div><div class="line">    alert(<span class="string">"索引"</span>+i+<span class="string">"对应的值"</span>+item);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h4 id="each-1"><a href="#each-1" class="headerlink" title="$().each()"></a>$().each()</h4><p>规定为每个匹配元素规定运行的函数<br>例子:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"js/jquery.min.js"</span>&gt;&lt;/script&gt;</div><div class="line">    &lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</div><div class="line">        $(document).ready(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">            $(<span class="string">"button"</span>).click(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">                $(<span class="string">"li"</span>).each(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">                    alert($(this).text())</div><div class="line">                &#125;);</div><div class="line">            &#125;);</div><div class="line">        &#125;);</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;button&gt;输出每个列表项的值&lt;/button&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li&gt;Coffee&lt;/li&gt;</div><div class="line">    &lt;li&gt;Milk&lt;/li&gt;</div><div class="line">    &lt;li&gt;Soda&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/19/获取url地址栏中的参数/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">获取url中参数</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="ds-share share" data-thread-key="循环" data-title="循环 for...in \ forEach() \ $.each() \ $().each()" data-url="http://yoursite.com/2017/09/20/循环/"  data-images="http://b168.photo.store.qq.com/psb?/V12qXfqn2FfQFv/LWINemvs02vpA*Waz*H71ImF5XKUHh31uLJGG66ReEQ!/b/dJt2LWTNLQAA&amp;bo=wAOAAgAAAAABAGY!&amp;rf=viewer_4&amp;t=5" data-content="循环 for...in \ forEach() \ $.each() \ $().each()">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2017 Nicky Wang
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>

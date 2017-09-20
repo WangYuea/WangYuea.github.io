@@ -162,6 +162,69 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-循环" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/20/循环/" class="article-date">
+  	<time datetime="2017-09-20T03:06:30.000Z" itemprop="datePublished">2017-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/20/循环/">
+        循环 for...in \ forEach() \ $.each() \ $().each()
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="for…in"><a href="#for…in" class="headerlink" title="for…in"></a>for…in</h3><p>语句用于遍历数组或者对象的属性（对数组或者对象的属性进行循环操作）。是javascript中的。<br>语法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (变量 <span class="keyword">in</span> 对象)</div><div class="line">&#123;</div><div class="line">    在此执行代码</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>“变量”用来指定变量，指定的变量可以是数组元素，也可以是对象的属性。</p>
+<p>实例:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var x</div><div class="line">var mycars = new Array()</div><div class="line">mycars[0] = <span class="string">"宝马"</span></div><div class="line">mycars[1] = <span class="string">"奔驰"</span></div><div class="line">mycars[2] = <span class="string">"宾利"</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> (x <span class="keyword">in</span> mycars)</div><div class="line">&#123;</div><div class="line">document.write(mycars[x] + <span class="string">"&lt;br /&gt;"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach()"></a>forEach()</h3><p> 用于调用数组的每一个元素，并将元素传递给回调函数。<br> 是js中遍历数组的方法<br> 对于空数组不会执行回调函数</p>
+<p> 例子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var arr=[1,2,3,4];</div><div class="line">arr.forEach(<span class="keyword">function</span>(val,index,arr)&#123;//val为数组中当前的值，index为当前值的下表，arr为原数组</div><div class="line">    arr[index]=2*val;</div><div class="line">&#125;);</div><div class="line">console.log(arr);//结果是修改了原数组，为每个数乘以2</div></pre></td></tr></table></figure></p>
+<h3 id="each"><a href="#each" class="headerlink" title="each()"></a>each()</h3><p>规定为每一个匹配的元素规定运行的函数<br>返回false可用于及早停止循环</p>
+<h4 id="each-是jquery中遍历数组的方法"><a href="#each-是jquery中遍历数组的方法" class="headerlink" title="$.each()是jquery中遍历数组的方法"></a>$.each()是jquery中遍历数组的方法</h4><p>例子：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr=[1,2,3,4];</div><div class="line">$.each(arr,<span class="keyword">function</span>(i,item)&#123;</div><div class="line">    alert(<span class="string">"索引"</span>+i+<span class="string">"对应的值"</span>+item);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h4 id="each-1"><a href="#each-1" class="headerlink" title="$().each()"></a>$().each()</h4><p>规定为每个匹配元素规定运行的函数<br>例子:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"js/jquery.min.js"</span>&gt;&lt;/script&gt;</div><div class="line">    &lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</div><div class="line">        $(document).ready(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">            $(<span class="string">"button"</span>).click(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">                $(<span class="string">"li"</span>).each(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">                    alert($(this).text())</div><div class="line">                &#125;);</div><div class="line">            &#125;);</div><div class="line">        &#125;);</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;button&gt;输出每个列表项的值&lt;/button&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li&gt;Coffee&lt;/li&gt;</div><div class="line">    &lt;li&gt;Milk&lt;/li&gt;</div><div class="line">    &lt;li&gt;Soda&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-获取url地址栏中的参数" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -679,68 +742,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var arr=[12,87,5,65,23,41,51,32,78,91,122,100,14];</div><div class="line"><span class="keyword">for</span>(var i=0;i&lt;arr.length-1;i++)&#123;</div><div class="line">    var flag=<span class="literal">true</span>;</div><div class="line">    <span class="keyword">for</span>(var j=0;j&lt;arr.length-1-i;j++)&#123;</div><div class="line">        <span class="keyword">if</span>(arr[j]&gt;arr[j+1])&#123;</div><div class="line">            var temp=arr[j];</div><div class="line">            arr[j]=arr[j+1];</div><div class="line">            arr[j+1]=temp;</div><div class="line">            flag=<span class="literal">false</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    <span class="keyword">if</span>(flag)&#123;</div><div class="line">    <span class="built_in">break</span>;</div><div class="line">    &#125;</div><div class="line">console.log(arr);</div></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-javasccript" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/05/09/javasccript/" class="article-date">
-  	<time datetime="2017-05-08T16:00:00.000Z" itemprop="datePublished">2017-05-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/09/javasccript/">
-        javasccript
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>javascript是脚本语言，不需要编译，是一种客户端的脚本语言</p>
-<h3 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- ECMAScript</div><div class="line">- DOM</div><div class="line">- BOM</div></pre></td></tr></table></figure>
-<p>JavaScript[3]是一种基于对象和事件驱动并具有相对安全性的客户端脚本语言。同时也是一种广泛用于客户端Web开发的脚本语言，常用来给HTML网页添加动态功能，比如响应用户的各种操作。它最初由网景公司（Netscape）的Brendan Eich设计，是一种动态、弱类型、基于原型的语言，内置支持类。JavaScript是Sun公司的注册商标。Ecma国际以JavaScript为基础制定了ECMAScript标准。JavaScript也可以用于其他场合，如服务器端编程。完整的JavaScript实现包含三个部分：ECMAScript，文档对象模型，字节顺序记号。</p>
-<p>Netscape公司在最初将其脚本语言命名为LiveScript。在Netscape在与Sun合作之后将其改名为JavaScript。JavaScript最初受Java启发而开始设计的，目的之一就是“看上去像Java”，因此语法上有类似之处，一些名称和命名规范也借自Java。但JavaScript的主要设计原则源自Self和Scheme。JavaScript与Java名称上的近似，是当时网景为了营销考虑与Sun公司达成协议的结果。</p>
-<p>为了取得技术优势，微软推出了VBScript来迎战JavaScript的脚本语言。为了互用性，Ecma国际（前身为欧洲计算机制造商协会）创建了ECMA-262标准（ECMAScript）。现在两者都属于ECMAScript的实现。尽管JavaScript作为给非程序人员的脚本语言，而非是作为给程序人员的编程语言来推广和宣传，但是JavaScript具有非常丰富的特性。</p>
-<h3 id="javascript组成一个完整的-JavaScript-实现是由以下-3-个不同部分组成的："><a href="#javascript组成一个完整的-JavaScript-实现是由以下-3-个不同部分组成的：" class="headerlink" title="javascript组成一个完整的 JavaScript 实现是由以下 3 个不同部分组成的："></a>javascript组成一个完整的 JavaScript 实现是由以下 3 个不同部分组成的：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">核心（ECMAScript）、文档对象模型（Document Object Model，简称DOM）、浏览器对象模型（Browser Object Model，简称BOM）。</div></pre></td></tr></table></figure>
-<h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><p>JavaScript程序是由若干语句组成的，语句是编写程序的指令。JavaScript提供了完整的基本编程语句，它们是：</p>
-<p>赋值语句、switch选择语句、while循环语句、for循环语句、for each循环语句、do…while循环语句、break循环中止语句、continue循环中断语句、with语句、try…catch语句、if语句（if..else，if…else if…）。</p>
-
       
     </div>
     
