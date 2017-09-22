@@ -278,6 +278,64 @@
 
 
   
+    <article id="post-js中的类型转换" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/05/js中的类型转换/" class="article-date">
+  	<time datetime="2016-08-04T16:00:00.000Z" itemprop="datePublished">2016-08-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/05/js中的类型转换/">
+        javasccript中的类型转换
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="字符串类型转换"><a href="#字符串类型转换" class="headerlink" title="字符串类型转换"></a>字符串类型转换</h3><p>三种换转方式，toString 、String 、隐式转换<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1、toString()可以转换数值、布尔、数组、对象，但是undefined和null不可以转化，undefined和null没有toString()方法。</div><div class="line">2、String() 都可以转换，包括undefined和null，undefined转换成undefined，null转换成null。</div><div class="line">3、隐式转换，用加好拼接，1和2是强制转换。</div></pre></td></tr></table></figure></p>
+<h3 id="数值类型转换"><a href="#数值类型转换" class="headerlink" title="数值类型转换"></a>数值类型转换</h3><p>三种换转方式，Number 、parseInt（parseFloat） 、隐式转换<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1、Number()转不了的就是NaN，空字符串返回0</div><div class="line">2、parseInt()转换成整数，parseFloat()转换成小数。</div><div class="line">3、隐式转换，用减、乘、除，1和2是强制转换。</div></pre></td></tr></table></figure></p>
+<h3 id="布尔类型转换"><a href="#布尔类型转换" class="headerlink" title="布尔类型转换"></a>布尔类型转换</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">    数值类型    字符串类型   布尔类型   undefined   null   object</div><div class="line">真  非0数字     非空字符串    <span class="literal">true</span>                          object</div><div class="line"></div><div class="line">假   0           空字符串     <span class="literal">false</span>      undefined   null</div></pre></td></tr></table></figure>
+<p>Boolean()凡是对象都为真，不管有无内容<br>取反！！ 隐式转换</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-锚点定位" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -296,7 +354,7 @@
   
     <h1 itemprop="name">
       <a class="article-title" href="/2016/07/25/锚点定位/">
-        Call 和apply的区别
+        锚点定位
         
       </a>
     </h1>

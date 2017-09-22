@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>锚点定位 | 前端开发</title>
+  <title>javasccript中的类型转换 | 前端开发</title>
 
   <!-- keywords -->
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="锚点的定位适合于较长的页面，点击某个关键词到达页面中指定的位置。 使用创建a标签链接1&amp;lt;a href=&quot;#id名&quot;&amp;gt;文本内容&amp;lt;/a&amp;gt; 使用相应的id名标注跳转到目标的位置不同页面的锚点定位：前面加上页面的路劲就可以了1&amp;lt;a href=&quot;页面路劲#id名&quot;&amp;gt;文本内容&amp;lt;/a&amp;gt;">
+  <meta name="description" content="字符串类型转换三种换转方式，toString 、String 、隐式转换1231、toString()可以转换数值、布尔、数组、对象，但是undefined和null不可以转化，undefined和null没有toString()方法。2、String() 都可以转换，包括undefined和null，undefined转换成undefined，null转换成null。3、隐式转换，用加好拼接，1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="锚点定位">
-<meta property="og:url" content="http://yoursite.com/2016/07/25/锚点定位/index.html">
+<meta property="og:title" content="javasccript中的类型转换">
+<meta property="og:url" content="http://yoursite.com/2016/08/05/js中的类型转换/index.html">
 <meta property="og:site_name" content="前端开发">
-<meta property="og:description" content="锚点的定位适合于较长的页面，点击某个关键词到达页面中指定的位置。 使用创建a标签链接1&amp;lt;a href=&quot;#id名&quot;&amp;gt;文本内容&amp;lt;/a&amp;gt; 使用相应的id名标注跳转到目标的位置不同页面的锚点定位：前面加上页面的路劲就可以了1&amp;lt;a href=&quot;页面路劲#id名&quot;&amp;gt;文本内容&amp;lt;/a&amp;gt;">
-<meta property="og:updated_time" content="2017-09-22T07:08:10.387Z">
+<meta property="og:description" content="字符串类型转换三种换转方式，toString 、String 、隐式转换1231、toString()可以转换数值、布尔、数组、对象，但是undefined和null不可以转化，undefined和null没有toString()方法。2、String() 都可以转换，包括undefined和null，undefined转换成undefined，null转换成null。3、隐式转换，用加好拼接，1">
+<meta property="og:updated_time" content="2017-09-22T07:23:56.460Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="锚点定位">
-<meta name="twitter:description" content="锚点的定位适合于较长的页面，点击某个关键词到达页面中指定的位置。 使用创建a标签链接1&amp;lt;a href=&quot;#id名&quot;&amp;gt;文本内容&amp;lt;/a&amp;gt; 使用相应的id名标注跳转到目标的位置不同页面的锚点定位：前面加上页面的路劲就可以了1&amp;lt;a href=&quot;页面路劲#id名&quot;&amp;gt;文本内容&amp;lt;/a&amp;gt;">
+<meta name="twitter:title" content="javasccript中的类型转换">
+<meta name="twitter:description" content="字符串类型转换三种换转方式，toString 、String 、隐式转换1231、toString()可以转换数值、布尔、数组、对象，但是undefined和null不可以转化，undefined和null没有toString()方法。2、String() 都可以转换，包括undefined和null，undefined转换成undefined，null转换成null。3、隐式转换，用加好拼接，1">
   
     <link rel="alternative" href="/atom.xml" title="前端开发" type="application/atom+xml">
   
@@ -164,11 +164,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-锚点定位" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-js中的类型转换" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/25/锚点定位/" class="article-date">
-  	<time datetime="2016-07-24T16:00:00.000Z" itemprop="datePublished">2016-07-25</time>
+      <a href="/2016/08/05/js中的类型转换/" class="article-date">
+  	<time datetime="2016-08-04T16:00:00.000Z" itemprop="datePublished">2016-08-05</time>
 </a>
     </div>
   
@@ -181,7 +181,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      锚点定位
+      javasccript中的类型转换
       
     </h1>
   
@@ -199,9 +199,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>锚点的定位适合于较长的页面，点击某个关键词到达页面中指定的位置。</p>
-<h3 id="使用创建a标签链接"><a href="#使用创建a标签链接" class="headerlink" title="使用创建a标签链接"></a>使用创建a标签链接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=<span class="string">"#id名"</span>&gt;文本内容&lt;/a&gt;</div></pre></td></tr></table></figure>
-<h3 id="使用相应的id名标注跳转到目标的位置"><a href="#使用相应的id名标注跳转到目标的位置" class="headerlink" title="使用相应的id名标注跳转到目标的位置"></a>使用相应的id名标注跳转到目标的位置</h3><h3 id="不同页面的锚点定位：前面加上页面的路劲就可以了"><a href="#不同页面的锚点定位：前面加上页面的路劲就可以了" class="headerlink" title="不同页面的锚点定位：前面加上页面的路劲就可以了"></a>不同页面的锚点定位：前面加上页面的路劲就可以了</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=<span class="string">"页面路劲#id名"</span>&gt;文本内容&lt;/a&gt;</div></pre></td></tr></table></figure>
+        <h3 id="字符串类型转换"><a href="#字符串类型转换" class="headerlink" title="字符串类型转换"></a>字符串类型转换</h3><p>三种换转方式，toString 、String 、隐式转换<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1、toString()可以转换数值、布尔、数组、对象，但是undefined和null不可以转化，undefined和null没有toString()方法。</div><div class="line">2、String() 都可以转换，包括undefined和null，undefined转换成undefined，null转换成null。</div><div class="line">3、隐式转换，用加好拼接，1和2是强制转换。</div></pre></td></tr></table></figure></p>
+<h3 id="数值类型转换"><a href="#数值类型转换" class="headerlink" title="数值类型转换"></a>数值类型转换</h3><p>三种换转方式，Number 、parseInt（parseFloat） 、隐式转换<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1、Number()转不了的就是NaN，空字符串返回0</div><div class="line">2、parseInt()转换成整数，parseFloat()转换成小数。</div><div class="line">3、隐式转换，用减、乘、除，1和2是强制转换。</div></pre></td></tr></table></figure></p>
+<h3 id="布尔类型转换"><a href="#布尔类型转换" class="headerlink" title="布尔类型转换"></a>布尔类型转换</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">    数值类型    字符串类型   布尔类型   undefined   null   object</div><div class="line">真  非0数字     非空字符串    <span class="literal">true</span>                          object</div><div class="line"></div><div class="line">假   0           空字符串     <span class="literal">false</span>      undefined   null</div></pre></td></tr></table></figure>
+<p>Boolean()凡是对象都为真，不管有无内容<br>取反！！ 隐式转换</p>
+
       
     </div>
     
@@ -210,15 +212,20 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/08/05/js中的类型转换/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/05/09/javasccript/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">&lt;</strong>
       <div class="article-nav-title">
         
-          javasccript中的类型转换
+          javasccript
         
       </div>
     </a>
   
+  
+    <a href="/2016/07/25/锚点定位/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">锚点定位</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
   
 </nav>
 
@@ -226,7 +233,7 @@
 </article>
 
 
-<div class="ds-share share" data-thread-key="锚点定位" data-title="锚点定位" data-url="http://yoursite.com/2016/07/25/锚点定位/"  data-images="http://b168.photo.store.qq.com/psb?/V12qXfqn2FfQFv/LWINemvs02vpA*Waz*H71ImF5XKUHh31uLJGG66ReEQ!/b/dJt2LWTNLQAA&amp;bo=wAOAAgAAAAABAGY!&amp;rf=viewer_4&amp;t=5" data-content="锚点定位">
+<div class="ds-share share" data-thread-key="js中的类型转换" data-title="javasccript中的类型转换" data-url="http://yoursite.com/2016/08/05/js中的类型转换/"  data-images="http://b168.photo.store.qq.com/psb?/V12qXfqn2FfQFv/LWINemvs02vpA*Waz*H71ImF5XKUHh31uLJGG66ReEQ!/b/dJt2LWTNLQAA&amp;bo=wAOAAgAAAAABAGY!&amp;rf=viewer_4&amp;t=5" data-content="javasccript中的类型转换">
     <div class="ds-share-inline">
       <ul  class="ds-share-icons-16">
       	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
