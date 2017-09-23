@@ -1145,7 +1145,7 @@ a {
   height: 35px;
 }
 .article-entry table thead tr {
-
+  background: #f8f8f8;
 }
 .article-entry table tbody tr:hover {
   background: #efefef;

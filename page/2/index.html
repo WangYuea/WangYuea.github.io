@@ -399,6 +399,143 @@
 
 
   
+    <article id="post-js三大系列" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/20/js三大系列/" class="article-date">
+  	<time datetime="2016-08-19T16:00:00.000Z" itemprop="datePublished">2016-08-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/20/js三大系列/">
+        js的三大系列
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="offset系列"><a href="#offset系列" class="headerlink" title="offset系列"></a>offset系列</h3><h4 id="offset系列的5个属性"><a href="#offset系列的5个属性" class="headerlink" title="offset系列的5个属性"></a>offset系列的5个属性</h4><ol>
+<li>offsetLeft : 用于获取元素到最近的定位父盒子的左侧距离<br> 计算方式: 当前元素的左边框的左侧到定位父盒子的左边框右侧<br> 如果父级盒子没有定位, 那么会接着往上找有定位的盒子<br> 如果上级元素都没有定位,那么最后距离是与body的left值</li>
+<li><p>offsetTop : 用于获取元素到最近定位父盒子的顶部距离<br> 计算方式:当前元素的上边框的上侧到定位父盒子的上边框下侧<br> 如果父级盒子没有定位,那么会接着往上找有定位的盒子<br> 如果上级元素都没有定位,那么最后距离是与body的top值</p>
+</li>
+<li><p>offsetWidth :用于获取元素的真实宽度(除了margin以外的宽度)</p>
+</li>
+<li><p>offsetHeight : 用于获取元素的真实高度(除了margin以外的高度)</p>
+</li>
+<li><p>offsetParent :用于获取该元素中有定位的最近父级元素<br> 如果当前元素的父级元素都没有进行定位,那么offsetParent为body</p>
+<h4 id="与style-left-top-width-height-的区别"><a href="#与style-left-top-width-height-的区别" class="headerlink" title="与style.(left/top/width/height)的区别:"></a>与style.(left/top/width/height)的区别:</h4><ol>
+<li>offset系列的是只读属性,而通过style的方式可以读写</li>
+<li>offset系列返回的数值类型(结果四舍五入),style返回的是字符串</li>
+<li>offsetLeft 和 offsetTop 可以返回没有定位的元素的left值和top值,而style不可以</li>
+</ol>
+</li>
+</ol>
+<h4 id="scroll系列"><a href="#scroll系列" class="headerlink" title="scroll系列"></a>scroll系列</h4><h4 id="scroll系列的4个属性"><a href="#scroll系列的4个属性" class="headerlink" title="scroll系列的4个属性"></a>scroll系列的4个属性</h4><ol>
+<li><p>scrollHeight :元素中内容的实际高度(没有边框)</p>
+<ul>
+<li>如果内容不足,就是元素的高度</li>
+</ul>
+</li>
+<li><p>scrollWidth: 元素中内容的实际宽度(没有边框)</p>
+<ul>
+<li>如果内容不足,就是元素的宽度</li>
+</ul>
+</li>
+<li><p>scrollTop: onscroll事件发生时,元素向上卷曲出去的距离</p>
+</li>
+<li><p>scrollLeft : onscroll事件发生时,元素向左卷曲出去的距离</p>
+<h4 id="兼容问题"><a href="#兼容问题" class="headerlink" title="兼容问题"></a>兼容问题</h4><p>(1) 兼容问题</p>
+</li>
+</ol>
+<ul>
+<li><p>未声明 DTD: 谷歌,火狐,IE9+支持</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.body.scrollTop/scrollLeft</div></pre></td></tr></table></figure>
+</li>
+<li><p>已经声明DTD:IE8以下支持</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.documentElement.scrollTop/scrollLeft</div></pre></td></tr></table></figure>
+</li>
+<li><p>火狐/谷歌/ie9+以上支持的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.pageYOffest/pageXOffest</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>(2) 兼容代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function getScroll() &#123;</div><div class="line">        return &#123;</div><div class="line">            left:window.pageXOffset||document.body.scrollLeft||document.documentElement.scrollLeft||0,</div><div class="line">           top:window.pageYOffset||document.body.scrollTop||document.documentElement.scrollTop||0</div><div class="line">        &#125;;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<h4 id="使用方法："><a href="#使用方法：" class="headerlink" title="使用方法："></a>使用方法：</h4><ol>
+<li>取得scrollLeft值: getScroll().left</li>
+<li>取得scrollTop值: getScroll().top</li>
+</ol>
+<h4 id="client系列"><a href="#client系列" class="headerlink" title="client系列"></a>client系列</h4><h4 id="client系列的4个常用属性-clientTop和clientLeft这里不予介绍"><a href="#client系列的4个常用属性-clientTop和clientLeft这里不予介绍" class="headerlink" title="client系列的4个常用属性(clientTop和clientLeft这里不予介绍)"></a>client系列的4个常用属性(clientTop和clientLeft这里不予介绍)</h4><ol>
+<li><p>clientWidth : 获取网页可视区域的宽度</p>
+</li>
+<li><p>clientHeight: 获取网页可视区域的高度</p>
+</li>
+<li><p>clientX :获取鼠标事件发生时的应用客户端区域的水平坐标</p>
+</li>
+<li><p>clientY :获取鼠标事件发生时的应用客户端区域的垂直坐标</p>
+<h4 id="兼容问题-1"><a href="#兼容问题-1" class="headerlink" title="兼容问题"></a>兼容问题</h4><p>(1) clientWidth 和 clientHeight的兼容问题<br> //由浏览器对象不同导致</p>
+</li>
+</ol>
+<ul>
+<li><p>未声明 DTD: 谷歌,火狐,IE9+支持</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.body.clientWidth/clientHeight</div></pre></td></tr></table></figure>
+</li>
+<li><p>已经声明DTD:IE8以下支持</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.documentElement.clientWidth/clientHeight</div></pre></td></tr></table></figure>
+</li>
+<li><p>火狐/谷歌/ie9+以上支持的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.innerWidth/innerHeight</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>(2) clientWidth 和 clientHeight的兼容代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function client()&#123;</div><div class="line">    if(window.innerWidth)&#123;</div><div class="line">        return &#123;</div><div class="line">            &quot;width&quot;:window.innerWidth,</div><div class="line">            &quot;height&quot;:window.innerHeight</div><div class="line">        &#125;;</div><div class="line">    &#125;else if(document.compatMode === &quot;CSS1Compat&quot;)&#123;</div><div class="line">        return &#123;</div><div class="line">            &quot;width&quot;:document.documentElement.clientWidth,</div><div class="line">            &quot;height&quot;:document.documentElement.clientHeight</div><div class="line">        &#125;;</div><div class="line">    &#125;else&#123;</div><div class="line">        return &#123;</div><div class="line">            &quot;width&quot;:document.body.clientWidth,</div><div class="line">            &quot;height&quot;:document.body.clientHeight</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p> 使用方法</p>
+<ol>
+<li>取得clientWidth的值: client().width</li>
+<li>取得clientHeight的值: client().height<br>(3)clientX 和 clientY的兼容问题<br>//由事件参数对象的兼容性问题导致</li>
+</ol>
+<ol>
+<li>谷歌,火狐,IE9+: 事件参数对象随着事件处理函数的参数传入</li>
+<li>IE8以下: event对象必须作为window对象的一个属性(window.event)<br>(4)clientX 和 clientY的兼容性代码<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">//将client和scroll的兼容问题进行对象的封装</div><div class="line">    var evtTools=&#123;</div><div class="line">        //获取兼容的事件参数对象</div><div class="line">        getEvt:function (e) &#123;</div><div class="line">            return window.event?window.event:e;</div><div class="line">        &#125;,</div><div class="line">        //获取的是可视区域的横坐标</div><div class="line">        getClientX:function (e) &#123;</div><div class="line">            return this.getEvt(e).clientX;</div><div class="line">        &#125;,</div><div class="line">        //获取的是可视区域的纵坐标</div><div class="line">        getClientY:function (e) &#123;</div><div class="line">            return this.getEvt(e).clientY;</div><div class="line">        &#125;,</div><div class="line">        //获取向左卷曲出去的距离的横坐标</div><div class="line">        getScrollLeft:function () &#123;</div><div class="line">            return window.pageXOffset||document.body.scrollLeft||document.documentElement.scrollLeft||0;</div><div class="line">        &#125;,</div><div class="line">        //获取向上卷曲出去的距离的纵坐标</div><div class="line">        getScrollTop:function () &#123;</div><div class="line">            return window.pageYOffset||document.body.scrollTop||document.documentElement.scrollTop||0;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>网页可见区域宽： document.body.clientWidth;<br>网页可见区域高： document.body.clientHeight;<br>网页可见区域宽： document.body.offsetWidth   (包括边线的宽);<br>网页可见区域高： document.body.offsetHeight  (包括边线的宽);<br>网页正文全文宽： document.body.scrollWidth;<br>网页正文全文高： document.body.scrollHeight;<br>网页被卷去的高： document.body.scrollTop;<br>网页被卷去的左： document.body.scrollLeft;<br>网页正文部分上： window.screenTop;<br>网页正文部分左： window.screenLeft;<br>屏幕分辨率的高： window.screen.height;<br>屏幕分辨率的宽： window.screen.width;<br>屏幕可用工作区高度： window.screen.availHeight;<br>屏幕可用工作区宽度：window.screen.availWidth;</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-js中的Date和Math" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
